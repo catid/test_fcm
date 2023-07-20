@@ -4,7 +4,7 @@ This is a quick test project to see how well the FCM color quantization/clusteri
 
 We convert the input image to L*a*b colorspace to improve the result quality.  We downsample the image to a size that can be processed in a few minutes.  We then run the FCM algorithm on the image as recommended by [1] to simplify the image into 16 solid color regions.  The result is converted back to RGB colorspace and written as a PNG image.
 
-Real-time output from Adobe Photoshop that looks better than FCM at first glance:
+Real-time output from Adobe Photoshop that looks better than FCM at first glance.  Image was downsampled just like in the fcm.py script:
 
 ![Photoshop Output](photoshop_output.png)
 
@@ -19,6 +19,8 @@ These results are useful for the input to the next stage in an automatic image v
 ## Reproduce Results
 
 ```bash
+conda create -n colors python 3.11
+conda activate colors
 pip install -r requirements.txt
 python fcm.py
 ```
